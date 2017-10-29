@@ -1,0 +1,9 @@
+body {
+    background-color: #ababab;
+}
+
+#form-login {
+	color: #5d5d5d;
+	background: #f2f2f2;
+	border-radius: 10px;
+}
