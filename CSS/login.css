@@ -1,9 +1,15 @@
 body {
-    background-color: #ababab;
+	background: url(http://i.imgur.com/GHr12sH.jpg) no-repeat center center fixed;
+    background-size: cover;
 }
 
-#form-login {
+.form-login {
+	margin-top: 60px;
+}
+
+form {
 	color: #5d5d5d;
 	background: #f2f2f2;
+	padding: 26px;
 	border-radius: 10px;
 }
