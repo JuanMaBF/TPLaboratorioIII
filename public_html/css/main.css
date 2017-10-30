@@ -1,3 +1,13 @@
+html {
+    font-family: Helvetica, sans-serif;
+}
+
 header img {
     height: 50%;
+}
+
+@media screen and (max-width: 991px){
+    nav.ml-auto {
+        margin-top: -31px;
+    }
 }
