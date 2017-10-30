@@ -10,3 +10,16 @@ body {
 .tab-btn {
     width: 50%;
 }
+
+.container-grid{
+}
+
+.tabla{
+    background-color: white;
+    border-radius: 10px;
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+  
+    display: flex;
+    align-items: center;
+}
