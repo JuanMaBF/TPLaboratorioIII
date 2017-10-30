@@ -11,15 +11,14 @@ body {
     width: 50%;
 }
 
-.container-grid{
-}
-
-.tabla{
-    background-color: white;
-    border-radius: 10px;
-    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-    min-height: 100vh; /* These two lines are counted as one :-)       */
-  
+.container-section{
+    min-height: 100%;
+    min-height: 100vh;
     display: flex;
     align-items: center;
+}
+
+.table{
+    background-color: white;
+    border-radius: 10px;
 }
