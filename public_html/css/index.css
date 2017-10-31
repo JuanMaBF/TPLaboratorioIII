@@ -16,6 +16,17 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    padding: 50px;
+}
+
+@media screen and (max-width: 991px){
+    nav.ml-auto {
+        margin-top: -31px;
+    }
+
+    .container-section{
+        padding: 3px;
+    }
 }
 
 .table{
@@ -27,4 +38,5 @@ body {
     color: #fff;
     background-color: #212529;
     border-color: #32383e;
+    border-radius: 3px;
 }
