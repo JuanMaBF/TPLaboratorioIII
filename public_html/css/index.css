@@ -3,6 +3,10 @@ body {
     background-color: #E9EBEE;
 }
 
+.nav-item img{
+    margin-top: 8px;
+}
+
 .btn-group{
     width: 150%;
 }
@@ -29,13 +33,14 @@ body {
     }
 
     .btn-salir{
-        margin-left: 85px;
+        float: right;
+        margin-right: 25px;
     }
 }
 
-@media screen and (min-width: 992px){
-    .btn-salir{
-        margin-right: 15px;
+@media (min-width: 768px) {
+    .navbar-right {
+        margin-right: 15px !important;
     }
 }
 
