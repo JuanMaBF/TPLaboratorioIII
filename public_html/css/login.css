@@ -1,23 +1,20 @@
 .form-login {
-	margin-top: 60px;
-}
-
-form {
+	margin-top: 160px;
 	color: #5d5d5d;
 	background: #f2f2f2;
 	padding: 26px;
 	border-radius: 10px;
 }
 
-form img {
+.form-login img {
     display: block;
 	margin: 0 auto;
     margin-bottom: 35px;
     width: 100%;
 }
 
-form input,
-form button {
+.form-login input,
+.form-login button {
     font-size: 18px;
 	margin: 16px 0;
 }
