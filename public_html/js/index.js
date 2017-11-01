@@ -1,5 +1,6 @@
 "use strict";
-/// <reference path="../jquery/jquery.d.ts" />
+/// <reference path="../definitions/require.d.ts" />
+/// <reference path="../definitions/jquery.d.ts" />
 Object.defineProperty(exports, "__esModule", { value: true });
 var $ = require("jquery");
 var Startup = /** @class */ (function () {

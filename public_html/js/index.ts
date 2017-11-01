@@ -1,4 +1,5 @@
-/// <reference path="../jquery/jquery.d.ts" />
+/// <reference path="../definitions/require.d.ts" />
+/// <reference path="../definitions/jquery.d.ts" />
 
 import * as $ from "jquery";
 
