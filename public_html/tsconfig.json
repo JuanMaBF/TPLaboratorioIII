@@ -2,13 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "baseUrl": ".",
-    "paths": {
-        "*": [
-            "bower_components/*",
-            "*"
-        ]
-    },
-    "strict": true
+    "strict": true,
+    "allowJs": false
   }
 }
