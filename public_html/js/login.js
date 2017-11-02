@@ -1,11 +1,9 @@
-"use strict";
-var Startup = /** @class */ (function () {
-    function Startup() {
+function login() {
+    var email = $("#email-txt").val();
+    var pass = $("#pass-txt").val();
+
+    if(true){ //validacion
+        window.location.href = "index.html";
     }
-    Startup.main = function () {
-        console.log('Hello World');
-        return 0;
-    };
-    return Startup;
-}());
-Startup.main();
+
+}
