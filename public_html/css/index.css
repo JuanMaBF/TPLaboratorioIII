@@ -45,22 +45,27 @@ body {
     }
 }
 
-.btn-group{
+.btn-group {
     width: 100%;
 }
 
-.btn-ab{
+.btn-ab {
     margin-bottom: 10px;
 }
 
-.table{
+.table {
     background-color: white;
     border-radius: 4px;
 }
 
-.thead-dark{
+.thead-dark {
     color: #fff;
     background-color: #212529;
     border-color: #32383e;
     border-radius: 3pxl
+}
+
+.modal-content {
+    margin-left: 20%;
+    width: 70%;
 }
