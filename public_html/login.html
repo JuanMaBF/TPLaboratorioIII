@@ -25,7 +25,10 @@
                 <section class="form-login">
                     <form action="#">
                         <img src="./img/logo.png">
-                        <input type="text" placeholder="Email" id="email-txt" class="form-control"/>
+                        <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+                              </div>
                         <input type="password" class="form-control" id="pass-txt" placeholder="Contraseña"/>
                         <input type="button" onclick="login()" class="btn btn-lg btn-primary btn-block" value="Ingresar"/>             
                     </form>                 

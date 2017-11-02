@@ -29,7 +29,7 @@
         <section class="row container-section">
             <h2>Estacionamiento</h2>
             <div class="btn-group btn-ab" role="group" aria-label="...">
-                <button type="button" class="btn-success btn btn-lg">Agregar</button>
+                <button type="button" class="btn-success btn btn-lg" data-toggle="modal" data-target="#modalAgregar">Agregar</button>
                 <button type="button" class="btn-danger btn btn-lg">Sacar</button>
             </div>
             <table class="table">
@@ -102,26 +102,28 @@
             </div>
         </section>
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+       <!-- <button type="button" class="btn btn-primary" data-toggle="modal" >
                 Launch demo modal
-              </button>
-              
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              </button>-->
+
+              <div class="modal fade" id="modalAgregar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                      <h5 class="modal-title" id="exampleModalLabel">Añadir auto</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
                     <div class="modal-body">
-                      ...
+                        <form class="form-estac" action="#">
+                            <label>Patente</label>
+                            <input type="text" id="patente-txt"/>
+                        </form>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                      <button type="button" class="btn btn-primary">Añadir</button>
                     </div>
                   </div>
                 </div>

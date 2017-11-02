@@ -18,3 +18,9 @@ header img {
         margin-top: -31px;
     }
 }
+
+.form-estac input,
+.form-estac button {
+    font-size: 18px;
+	margin: 16px 0;
+}
