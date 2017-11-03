@@ -36,13 +36,11 @@ function crearRows(cabecera, rows) {
         });
         newHtml += "</tr>";
     });
-    console.log(newHtml);
     return newHtml;
 }
 
 
 window.onload = function() {
-    console.log("fsadfas");
     var columnasAutos = ["Patente", "Usuario", "Fecha"];
     var filas = [
         ["columna1a", "columna2a", "columna3a"],
