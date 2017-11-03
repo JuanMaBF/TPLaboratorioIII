@@ -10,12 +10,12 @@ function logout(){
 
 function crearGrilla(cols, rows) {
     var cabecera = crearCabecera(cols);
-    crearRows(cabecera, rows);
+    let newHtml = crearRows(cabecera, rows);
+    $("#grilla").html(newHtml);
 }
 
 function crearCabecera(cols){
     let newHtml = "";
-
     newHtml += "<thead class=\"thead-dark\">";
     newHtml += "<tr>";
     newHtml += "<th scope=\"col\"></th>";
@@ -26,16 +26,18 @@ function crearCabecera(cols){
 }
 
 function crearRows(cabecera, rows) {
-    var newHtml = cabecera;
+    let newHtml = cabecera;
     newHtml += "<tbody>";
     rows.forEach(function(row){
         newHtml += "<tr>";
         newHtml += "<th scope=\"row\"><input type=\"checkbox\" id=\"checkbox1\"></th>";
         row.forEach(function(el){
-
+            newHtml += "<td>" + el + "</td>";
         });
-        newHtml = "</tr>";
+        newHtml += "</tr>";
     });
+    console.log(newHtml);
+    return newHtml;
 }
 
 
@@ -49,7 +51,7 @@ window.onload = function() {
         ["columna1e", "columna2e", "columna3e"],
         ["columna1f", "columna2f", "columna3f"]
     ]
-    crearGrilla(columnasAutos);
+    crearGrilla(columnasAutos, filas);
 };
 
 /*
