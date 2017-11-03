@@ -53,14 +53,3 @@ window.onload = function() {
     ]
     crearGrilla(columnasAutos, filas);
 };
-
-/*
-<tbody>
-    <tr>
-        <th scope="row"><input type="checkbox" id="checkbox1"></th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-    </tr>
-</tbody>
-*/
