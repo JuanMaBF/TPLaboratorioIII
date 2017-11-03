@@ -42,6 +42,7 @@ function crearRows(cabecera, rows) {
 
 
 window.onload = function() {
+    console.log("fsadfas");
     var columnasAutos = ["Patente", "Usuario", "Fecha"];
     var filas = [
         ["columna1a", "columna2a", "columna3a"],
