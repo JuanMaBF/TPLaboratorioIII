@@ -8,43 +8,44 @@ function logout(){
     }
 }
 
-/*function agregarAuto() {
-   var currentHtml = $("#grilla").html();
+function crearGrilla(cols, rows) {
+    var cabecera = crearCabecera(cols);
+    crearRows(cabecera, rows);
+}
 
-    currentHtml +=
-
-}*/
-
-function crearGrilla(cols){
-    console.log("pito");
-    var grilla = $("#grilla");
-    var newHtml = "";
-    grilla.html("");
+function crearCabecera(cols){
+    let newHtml = "";
 
     newHtml += "<thead class=\"thead-dark\">";
     newHtml += "<tr>";
     newHtml += "<th scope=\"col\"></th>";
-
-    cols.forEach(function(col) {
-        newHtml += "<th scope=\"col\">" + col + "</th>";
-    });
-
+    cols.forEach(function(col) { newHtml += "<th scope=\"col\">" + col + "</th>"; });
     newHtml += "</tr>";
-    newHtml = "</thead>";
+    newHtml += "</thead>";
+    return newHtml;
 }
 
-crearGrilla(columnasAutos);
+function crearRows(cabecera, rows) {
+    var newHtml = cabecera;
+    newHtml += "<tbody>";
+    newHtml += "<tr>";
+    newHtml += "<th scope=\"row\"><input type=\"checkbox\" id=\"checkbox1\"></th>";
+}
 
 
-var columnasAutos = ["Patente", "Usuario", "Fecha"];
+window.onload = function() {
+    var columnasAutos = ["Patente", "Usuario", "Fecha"];
+
+    crearGrilla(columnasAutos);
+};
 
 /*
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Patente</th>
-            <th scope="col">Usuario</th>
-            <th scope="col">Fecha</th>
-        </tr>
-    </thead>
+<tbody>
+    <tr>
+        <th scope="row"><input type="checkbox" id="checkbox1"></th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+    </tr>
+</tbody>
 */
