@@ -8,3 +8,6 @@ function logout(){
     }
 }
 
+function agregarAuto() {
+    alert("lala");
+}
