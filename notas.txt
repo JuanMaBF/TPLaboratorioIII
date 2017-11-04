@@ -2,4 +2,4 @@ Notas:
 
     - Registro
     - Header - Main - Footer (falta hacer este)
-    - Admin (administrar usuarios)
+    - Admin (administrar usuarios) = a tabla de usuario, poner estado.
