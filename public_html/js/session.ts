@@ -4,10 +4,6 @@ namespace Session {
 
     export class Session {
 
-        public constructor(){
-            console.log("fadsf");
-        }
-
         public login() {
             var email = $("#email-txt").val();
             var pass = $("#pass-txt").val();
@@ -31,9 +27,19 @@ namespace Session {
             } 
         }
 
-        public logout() {
-            
+        public logout(){
+            /* TODO: Proceso de deslogueo*/
+            if(true) {
+                window.location.href = "login.html";
+            }
         }
-
     }
+}
+
+let session: Session.Session = new Session.Session();
+function login(){
+    session.login();
+}
+function logout() {
+    session.logout();
 }

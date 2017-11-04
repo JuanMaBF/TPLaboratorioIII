@@ -3,9 +3,6 @@
 var Session;
 (function (Session_1) {
     class Session {
-        constructor() {
-            console.log("fadsf");
-        }
         login() {
             var email = $("#email-txt").val();
             var pass = $("#pass-txt").val();
@@ -28,7 +25,18 @@ var Session;
             }
         }
         logout() {
+            /* TODO: Proceso de deslogueo*/
+            if (true) {
+                window.location.href = "login.html";
+            }
         }
     }
     Session_1.Session = Session;
 })(Session || (Session = {}));
+let session = new Session.Session();
+function login() {
+    session.login();
+}
+function logout() {
+    session.logout();
+}

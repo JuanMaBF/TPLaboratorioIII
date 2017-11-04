@@ -1,13 +1,5 @@
 ///<reference path="../grid-creator.ts"/>
 
-function logout(){
-    /* TODO: Proceso de deslogueo*/
-
-    if(true) {
-        window.location.href = "login.html";
-    }
-}
-
 window.onload = function() {
     var columnasAutos = ["Patente", "Usuario", "Fecha"];
     var filas = [
