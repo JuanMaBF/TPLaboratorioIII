@@ -1,0 +1,5 @@
+Notas:
+
+    - Registro
+    - Header - Main - Footer (falta hacer este)
+    - Admin (administrar usuarios)

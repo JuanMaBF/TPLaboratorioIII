@@ -1,14 +1,15 @@
 "use strict";
+///<reference path="../node_modules/@types/jquery/index.d.ts"/>
 var grildCreator;
 (function (grildCreator) {
     function crearGrilla(cols, rows) {
         var cabecera = crearCabecera(cols);
-        var newHtml = crearRows(cabecera, rows);
+        let newHtml = crearRows(cabecera, rows);
         $("#grilla").html(newHtml);
     }
     grildCreator.crearGrilla = crearGrilla;
     function crearCabecera(cols) {
-        var newHtml = "";
+        let newHtml = "";
         newHtml += "<thead class=\"thead-dark\">";
         newHtml += "<tr>";
         newHtml += "<th scope=\"col\"></th>";
@@ -18,7 +19,7 @@ var grildCreator;
         return newHtml;
     }
     function crearRows(cabecera, rows) {
-        var newHtml = cabecera;
+        let newHtml = cabecera;
         newHtml += "<tbody>";
         rows.forEach(function (row) {
             newHtml += "<tr>";

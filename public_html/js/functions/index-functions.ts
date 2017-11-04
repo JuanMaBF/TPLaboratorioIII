@@ -1,4 +1,4 @@
-///<reference path="./grid-creator.ts"/>
+///<reference path="../grid-creator.ts"/>
 
 function logout(){
     /* TODO: Proceso de deslogueo*/

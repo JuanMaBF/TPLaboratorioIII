@@ -1,3 +1,5 @@
+///<reference path="../node_modules/@types/jquery/index.d.ts"/>
+
 namespace grildCreator {
 
     export function crearGrilla(cols: Array<string>, rows: Array<Array<string>>) {
