@@ -73,22 +73,21 @@ namespace gridCreator {
     }
 }
 
+var grillaCreator: gridCreator.gridCreator;
+
 window.onload = function() {
-    var grillaCreator = new gridCreator.gridCreator();
-    grillaCreator.crearGrillaPagos();
+    grillaCreator = new gridCreator.gridCreator();
+    grillaCreator.crearGrillaAutos();
 };
 
 function crearGrillaAutos() {
-    var grillaCreator = new gridCreator.gridCreator();
     grillaCreator.crearGrillaAutos();
 }
 
 function crearGrillaUsuarios() {
-    var grillaCreator = new gridCreator.gridCreator();
     grillaCreator.crearGrillaUsuarios();
 }
 
 function crearGrillaPagos() {
-    var grillaCreator = new gridCreator.gridCreator();
     grillaCreator.crearGrillaPagos();
 }

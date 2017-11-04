@@ -66,19 +66,17 @@ var gridCreator;
     }
     gridCreator_1.gridCreator = gridCreator;
 })(gridCreator || (gridCreator = {}));
+var grillaCreator;
 window.onload = function () {
-    var grillaCreator = new gridCreator.gridCreator();
-    grillaCreator.crearGrillaPagos();
+    grillaCreator = new gridCreator.gridCreator();
+    grillaCreator.crearGrillaAutos();
 };
 function crearGrillaAutos() {
-    var grillaCreator = new gridCreator.gridCreator();
     grillaCreator.crearGrillaAutos();
 }
 function crearGrillaUsuarios() {
-    var grillaCreator = new gridCreator.gridCreator();
     grillaCreator.crearGrillaUsuarios();
 }
 function crearGrillaPagos() {
-    var grillaCreator = new gridCreator.gridCreator();
     grillaCreator.crearGrillaPagos();
 }
