@@ -27,54 +27,50 @@
             </form>
         </nav>
     </header>
-        <section class="row container-section">
-            <h2>Estacionamiento</h2>
-            <div class="btn-group btn-ab" role="group" aria-label="...">
-                <button type="button" class="btn-success btn btn-lg" data-toggle="modal" data-target="#modalAgregar">Agregar</button>
-                <button type="button" class="btn-danger btn btn-lg">Sacar</button>
+    <section class="row container-section">
+        <h2>Estacionamiento</h2>
+        <div class="btn-group btn-ab" role="group" aria-label="...">
+            <button type="button" class="btn-success btn btn-lg" data-toggle="modal" data-target="#modalAgregar">Agregar</button>
+            <button type="button" class="btn-danger btn btn-lg">Sacar</button>
+        </div>
+        <table class="table" id="grilla"> <!-- Se genera dinamicamente --> </table>
+        <div class="btn-toolbar mb-3" role="toolbar">
+            <div class="btn-group mr-2" role="group">
+                <button type="button" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </button>
+                <button type="button" class="btn btn-primary">1</button>
+                <button type="button" class="btn btn-primary">2</button>
+                <button type="button" class="btn btn-primary">3</button>
+                <button type="button" class="btn btn-primary">4</button>
+                <button type="button" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </button>
             </div>
-            <table class="table" id="grilla"> <!-- Se genera dinamicamente --> </table>
-            <div class="btn-toolbar mb-3" role="toolbar">
-                <div class="btn-group mr-2" role="group">
-                    <button type="button" class="btn btn-primary">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                    </button>
-                    <button type="button" class="btn btn-primary">1</button>
-                    <button type="button" class="btn btn-primary">2</button>
-                    <button type="button" class="btn btn-primary">3</button>
-                    <button type="button" class="btn btn-primary">4</button>
-                    <button type="button" class="btn btn-primary">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                    </button>
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
 
-       <!-- <button type="button" class="btn btn-primary" data-toggle="modal" >
-                Launch demo modal
-              </button>-->
-
-              <div class="modal fade" id="modalAgregar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Añadir auto</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <div class="modal fade" id="modalAgregar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Añadir auto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="form-estac" action="#">
-                            <input type="text" placeholder="Patente" class="form-control" id="patente-txt"/>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                      <button type="button" class="btn btn-primary" onclick="agregarAuto()">Añadir</button>
-                    </div>
-                  </div>
+                    </button>
                 </div>
-              </div>
+                <div class="modal-body">
+                    <form class="form-estac" action="#">
+                        <input type="text" placeholder="Patente" class="form-control" id="patente-txt"/>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="agregarAuto()">Añadir</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </body>
