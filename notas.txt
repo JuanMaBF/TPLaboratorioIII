@@ -3,3 +3,10 @@ Notas:
     - Registro
     - Header - Main - Footer (falta hacer este)
     - Admin (administrar usuarios) = a tabla de usuario, poner estado.
+
+
+SERVIDOR:
+
+    - Hacer server con una validacion minima.
+    - Que retorne la data de las grillas hardcodeadas (en JSON)
+    - Generar data con https://www.mockaroo.com/ 

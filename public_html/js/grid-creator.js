@@ -3,6 +3,7 @@
 var gridCreator;
 (function (gridCreator_1) {
     class gridCreator {
+        /* CREAR GRILLA */
         crearGrillaAutos() {
             var columnas = ["Patente", "Usuario", "Fecha"];
             var filas = [

@@ -4,6 +4,7 @@ namespace gridCreator {
 
     export class gridCreator {
 
+        /* CREAR GRILLA */
         public crearGrillaAutos() {
             var columnas = ["Patente", "Usuario", "Fecha"];
             var filas = [
@@ -69,7 +70,6 @@ namespace gridCreator {
             });
             return newHtml;
         }
-
     }
 }
 
