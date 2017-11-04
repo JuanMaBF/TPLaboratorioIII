@@ -6,6 +6,10 @@ body {
     margin-top: 8px;
 }
 
+.btn-group-grillas {
+    margin-bottom: 15px;
+}
+
 .btn-group{
     width: 150%;
 }

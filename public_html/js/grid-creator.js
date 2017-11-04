@@ -68,17 +68,17 @@ var gridCreator;
 })(gridCreator || (gridCreator = {}));
 window.onload = function () {
     var grillaCreator = new gridCreator.gridCreator();
-    grillaCreator.crearGrillaUsuarios();
+    grillaCreator.crearGrillaPagos();
 };
-function loadCarsGrid() {
+function crearGrillaAutos() {
     var grillaCreator = new gridCreator.gridCreator();
     grillaCreator.crearGrillaAutos();
 }
-function loadUsersGrid() {
+function crearGrillaUsuarios() {
     var grillaCreator = new gridCreator.gridCreator();
     grillaCreator.crearGrillaUsuarios();
 }
-function loadPaymentsGrid() {
+function crearGrillaPagos() {
     var grillaCreator = new gridCreator.gridCreator();
     grillaCreator.crearGrillaPagos();
 }
