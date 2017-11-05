@@ -5,7 +5,7 @@
         public $rows = "";
     }
 
-    $action = $_POST["data"];
+    $action = $_POST["action"];
     switch($action) {
         case "cargarAutos":
             $grilla = new grillaObject;

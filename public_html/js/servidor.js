@@ -2,15 +2,9 @@
 var servidor;
 (function (servidor_1) {
     class servidor {
-        constructor() {
-            this.SESSION_FILE_PATH = "./php/session.php";
-            this.AUTO_FILE_PATH = "./php/auto.php";
-            this.USUARIO_FILE_PATH = "./php/usuario.php";
-            this.PAGOS_FILE_PATH = "./php/pagos.php";
-        }
         /*AUTO*/
         cargarAutos() {
-            this.connection(this.AUTO_FILE_PATH, "cargarAutos");
+            this.doConnection("cargarAutos");
         }
         eliminarAutos(patente) {
             return true;
@@ -25,14 +19,19 @@ var servidor;
         }
         agregarUsuario(email, contra) {
         }
-        connection(path, data) {
+        doConnection(action) {
             this.mostrarSpinner();
-            setTimeout(this.ocultarSpinner, 1000);
-            let dataObj = { "data": data };
+            setTimeout(() => {
+                this.ocultarSpinner();
+                this.connection(action);
+            }, 1000);
+        }
+        connection(action) {
+            let actionObj = { "action": action };
             $.ajax({
-                url: path,
+                url: "./php/servidor.php",
                 type: "post",
-                data: dataObj,
+                data: actionObj,
                 success: (response) => {
                     this.callback(response);
                 },
@@ -43,6 +42,7 @@ var servidor;
         }
         mostrarSpinner() {
             console.log("mostrando");
+            $("#modalAgregar").modal();
         }
         ocultarSpinner() {
             console.log("ocultando");

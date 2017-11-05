@@ -4,14 +4,9 @@ namespace servidor {
 
         public callback: Function;
 
-        private SESSION_FILE_PATH: string = "./php/session.php";
-        private AUTO_FILE_PATH: string = "./php/auto.php";
-        private USUARIO_FILE_PATH: string = "./php/usuario.php";
-        private PAGOS_FILE_PATH: string = "./php/pagos.php";
-
         /*AUTO*/
         public cargarAutos(): void {
-            this.connection(this.AUTO_FILE_PATH, "cargarAutos");
+            this.doConnection("cargarAutos");
         }
 
         public eliminarAutos(patente: string): boolean {
@@ -35,14 +30,20 @@ namespace servidor {
 
         }
 
-        private connection(path: string, data: string): void {
+        private doConnection(action: string){
             this.mostrarSpinner();
-            setTimeout(this.ocultarSpinner, 1000);
-            let dataObj = { "data": data };
+            setTimeout(() => { 
+                this.ocultarSpinner();
+                this.connection(action);
+            }, 1000);
+        }
+
+        private connection(action: string): void {
+            let actionObj = { "action": action };
             $.ajax({
-                url: path,
+                url: "./php/servidor.php",
                 type: "post",
-                data: dataObj,
+                data: actionObj,
                 success: (response) => {
                     this.callback(response);
                 },
@@ -54,6 +55,7 @@ namespace servidor {
 
         private mostrarSpinner(): void {
             console.log("mostrando");
+            $("#modalAgregar").modal();
         }
 
         private ocultarSpinner(): void {
