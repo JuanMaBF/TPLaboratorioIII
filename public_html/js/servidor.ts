@@ -2,17 +2,35 @@ namespace servidor {
 
     export class servidor {
 
-        /*AUTO*/
-        public traerTodosAutos(): Array<Array<string>> {
-
+        public xmlHttp = new XMLHttpRequest();
+        public callback = () => {
+            if(this.xmlHttp.readyState == 4 && this.xmlHttp.status == 200){
+                return this.xmlHttp.response;
+            }
         }
 
-        public eliminarAutos(patente: string) {
+        /*AUTO*/
+        public traerTodosAutos(): Array<Array<string>> {
+            $.ajax({
+                url: "Test.php",
+                type: "post",
+                data: "fsdaf" ,
+                success: function (response) {
+                   console.log("fsadfadsf");
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                   console.log(textStatus, errorThrown);
+                }
+            });
+            return new Array<Array<string>>();
+        }
 
+        public eliminarAutos(patente: string): boolean {
+            return true;
         } 
 
-        public agregarAutos(patente: string, usuario: string) {
-
+        public agregarAutos(patente: string, usuario: string): boolean {
+            return true;
         }
 
         /*USUARIO*/

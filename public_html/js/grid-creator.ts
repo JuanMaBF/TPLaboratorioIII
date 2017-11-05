@@ -1,4 +1,5 @@
 ///<reference path="../node_modules/@types/jquery/index.d.ts"/>
+///<reference path="./servidor.ts"/>
 
 namespace gridCreator {
 
