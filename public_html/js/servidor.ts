@@ -12,11 +12,11 @@ namespace servidor {
         /*AUTO*/
         public traerTodosAutos(): Array<Array<string>> {
             $.ajax({
-                url: "Test.php",
+                url: "./php/Test.php",
                 type: "post",
                 data: "fsdaf" ,
                 success: function (response) {
-                   console.log("fsadfadsf");
+                    console.log(response);
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                    console.log(textStatus, errorThrown);

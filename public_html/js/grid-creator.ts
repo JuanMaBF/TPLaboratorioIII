@@ -16,6 +16,8 @@ namespace gridCreator {
                 ["columna1e", "columna2e", "columna3e"],
                 ["columna1f", "columna2f", "columna3f"]
             ];
+            var server = new servidor.servidor();
+            server.traerTodosAutos();
             this.crearGrilla(columnas, filas);
         }
 

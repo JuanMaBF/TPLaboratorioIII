@@ -1,5 +1,6 @@
 "use strict";
 ///<reference path="../node_modules/@types/jquery/index.d.ts"/>
+///<reference path="./servidor.ts"/>
 var gridCreator;
 (function (gridCreator_1) {
     class gridCreator {
@@ -14,6 +15,8 @@ var gridCreator;
                 ["columna1e", "columna2e", "columna3e"],
                 ["columna1f", "columna2f", "columna3f"]
             ];
+            var server = new servidor.servidor();
+            server.traerTodosAutos();
             this.crearGrilla(columnas, filas);
         }
         crearGrillaUsuarios() {
