@@ -7,19 +7,26 @@ namespace servidor {
         private USUARIO_FILE_PATH: string = "./php/usuario.php";
         private PAGOS_FILE_PATH: string = "./php/pagos.php";
 
-        /*AUTO*/
-        public traerTodosAutos(): Array<Array<string>> {
+        public connection(path: string, data: any): any {
+            let respon;
             $.ajax({
                 url: "./php/Test.php",
                 type: "post",
                 data: "fsdaf" ,
-                success: function (response) {
-                    console.log(response);
+                success: (response) => {
+                    respon = response;
                 },
-                error: function(jqXHR, textStatus, errorThrown) {
+                error: (jqXHR, textStatus, errorThrown) => {
                    console.log(textStatus, errorThrown);
                 }
             });
+            return respon;
+        }
+
+        /*AUTO*/
+        public traerTodosAutos(): Array<Array<string>> {
+            let a = this.connection(this.SESSION_FILE_PATH, "");
+            console.log(a);
             return new Array<Array<string>>();
         }
 
