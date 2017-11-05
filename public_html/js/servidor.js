@@ -8,7 +8,7 @@ var servidor;
             this.USUARIO_FILE_PATH = "./php/usuario.php";
             this.PAGOS_FILE_PATH = "./php/pagos.php";
         }
-        connection(path, data, action) {
+        connection(path, data) {
             $.ajax({
                 url: path,
                 type: "post",
@@ -21,15 +21,9 @@ var servidor;
                 }
             });
         }
-        cargarAutos() {
-            this.connection(this.AUTO_FILE_PATH, "sadf");
-        }
         /*AUTO*/
         traerTodosAutos() {
-            /*var aa = {};
-            let a =
-            console.log(aa);*/
-            return new Array();
+            this.connection(this.AUTO_FILE_PATH, "traerAutos");
         }
         eliminarAutos(patente) {
             return true;

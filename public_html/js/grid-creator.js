@@ -6,7 +6,7 @@ var gridCreator;
     class gridCreator {
         constructor() {
             this.server = new servidor.servidor();
-            this.server.callback = this.testMethod;
+            this.server.callback = this.crearGrilla;
         }
         /* CREAR GRILLA */
         crearGrillaAutos() {
@@ -22,7 +22,7 @@ var gridCreator;
             var server = new servidor.servidor();
             server.traerTodosAutos();
             this.crearGrilla(columnas, filas);*/
-            this.server.cargarAutos();
+            this.server.traerTodosAutos();
         }
         crearGrillaUsuarios() {
             var columnas = ["Nombre", "Estado"];
@@ -32,7 +32,7 @@ var gridCreator;
                 ["Pepito", "Sin aprobar"],
                 ["Pepito", "Bloqueado"]
             ];
-            this.crearGrilla(columnas, filas);
+            //this.crearGrilla(columnas, filas);
         }
         crearGrillaPagos() {
             var columnas = ["Patente", "Fecha", "Monto", "Usuario"];
@@ -42,9 +42,12 @@ var gridCreator;
                 ["MLD234", "12/06/17", "$500", "Pepito"],
                 ["MLD234", "12/06/17", "$500", "Pepito"]
             ];
-            this.crearGrilla(columnas, filas);
+            //this.crearGrilla(columnas, filas);
         }
-        crearGrilla(cols, rows) {
+        crearGrilla(dataStr /*cols: Array<string>, rows: Array<Array<string>>*/) {
+            let data = JSON.parse(dataStr);
+            let cols = data.cols;
+            let rows = data.rows;
             var cabecera = this.crearCabecera(cols);
             let newHtml = this.crearRows(cabecera, rows);
             $("#grilla").html(newHtml);

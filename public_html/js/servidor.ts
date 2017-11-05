@@ -8,10 +8,8 @@ namespace servidor {
         private AUTO_FILE_PATH: string = "./php/auto.php";
         private USUARIO_FILE_PATH: string = "./php/usuario.php";
         private PAGOS_FILE_PATH: string = "./php/pagos.php";
-        
-        private 
 
-        public connection(path: string, data: any, action: string): void {
+        public connection(path: string, data: string): void {
             $.ajax({
                 url: path,
                 type: "post",
@@ -25,17 +23,10 @@ namespace servidor {
             });
         }
 
-        public cargarAutos(): void{
-            this.connection(this.AUTO_FILE_PATH, "sadf");
-
-        }
-
         /*AUTO*/
-        public traerTodosAutos(): Array<Array<string>> {
-            /*var aa = {};
-            let a = 
-            console.log(aa);*/
-            return new Array<Array<string>>();
+        public traerTodosAutos(): void {
+
+            this.connection(this.AUTO_FILE_PATH, "traerAutos");
         }
 
         public eliminarAutos(patente: string): boolean {

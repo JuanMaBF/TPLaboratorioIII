@@ -9,7 +9,7 @@ namespace gridCreator {
 
         public constructor() {
             this.server = new servidor.servidor();
-            this.server.callback = this.testMethod;
+            this.server.callback = this.crearGrilla;
         }
 
         /* CREAR GRILLA */
@@ -26,7 +26,7 @@ namespace gridCreator {
             var server = new servidor.servidor();
             server.traerTodosAutos();
             this.crearGrilla(columnas, filas);*/
-            this.server.cargarAutos();
+            this.server.traerTodosAutos();
         }
 
         public crearGrillaUsuarios() {
@@ -37,7 +37,7 @@ namespace gridCreator {
                 ["Pepito", "Sin aprobar"],
                 ["Pepito", "Bloqueado"]
             ];
-            this.crearGrilla(columnas, filas);
+            //this.crearGrilla(columnas, filas);
         }
 
         public crearGrillaPagos() {
@@ -48,10 +48,13 @@ namespace gridCreator {
                 ["MLD234", "12/06/17", "$500", "Pepito"],
                 ["MLD234", "12/06/17", "$500", "Pepito"]
             ];
-            this.crearGrilla(columnas, filas);
+            //this.crearGrilla(columnas, filas);
         }
 
-        private crearGrilla(cols: Array<string>, rows: Array<Array<string>>) {
+        private crearGrilla(dataStr: string/*cols: Array<string>, rows: Array<Array<string>>*/) {
+            let data = JSON.parse(dataStr);
+            let cols = data.cols as Array<string>;
+            let rows = data.rows as Array<Array<string>>;
             var cabecera = this.crearCabecera(cols);
             let newHtml = this.crearRows(cabecera, rows);
             $("#grilla").html(newHtml);
