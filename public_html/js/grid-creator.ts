@@ -9,24 +9,11 @@ namespace gridCreator {
 
         public constructor() {
             this.server = new servidor.servidor();
-            this.server.callback = this.crearGrilla;
+            this.server.callback = this.crearGrilla.bind(this);
         }
 
-        /* CREAR GRILLA */
         public crearGrillaAutos() {
-            /*var columnas = ["Patente", "Usuario", "Fecha"];
-            var filas = [
-                ["columna1a", "columna2a", "columna3a"],
-                ["columna1b", "columna2b", "columna3b"],
-                ["columna1c", "columna2c", "columna3c"],
-                ["columna1d", "columna2d", "columna3d"],
-                ["columna1e", "columna2e", "columna3e"],
-                ["columna1f", "columna2f", "columna3f"]
-            ];
-            var server = new servidor.servidor();
-            server.traerTodosAutos();
-            this.crearGrilla(columnas, filas);*/
-            this.server.traerTodosAutos();
+            this.server.cargarAutos();
         }
 
         public crearGrillaUsuarios() {
@@ -51,7 +38,7 @@ namespace gridCreator {
             //this.crearGrilla(columnas, filas);
         }
 
-        private crearGrilla(dataStr: string/*cols: Array<string>, rows: Array<Array<string>>*/) {
+        private crearGrilla(dataStr: string) {
             let data = JSON.parse(dataStr);
             let cols = data.cols as Array<string>;
             let rows = data.rows as Array<Array<string>>;

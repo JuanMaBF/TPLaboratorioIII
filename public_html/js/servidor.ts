@@ -9,24 +9,9 @@ namespace servidor {
         private USUARIO_FILE_PATH: string = "./php/usuario.php";
         private PAGOS_FILE_PATH: string = "./php/pagos.php";
 
-        public connection(path: string, data: string): void {
-            $.ajax({
-                url: path,
-                type: "post",
-                data: data,
-                success: (response) => {
-                    this.callback(response);
-                },
-                error: (jqXHR, textStatus, errorThrown) => {
-                   console.log(textStatus, errorThrown);
-                }
-            });
-        }
-
         /*AUTO*/
-        public traerTodosAutos(): void {
-
-            this.connection(this.AUTO_FILE_PATH, "traerAutos");
+        public cargarAutos(): void {
+            this.connection(this.AUTO_FILE_PATH, "cargarAutos");
         }
 
         public eliminarAutos(patente: string): boolean {
@@ -50,6 +35,30 @@ namespace servidor {
 
         }
 
+        private connection(path: string, data: string): void {
+            this.mostrarSpinner();
+            setTimeout(this.ocultarSpinner, 1000);
+            let dataObj = { "data": data };
+            $.ajax({
+                url: path,
+                type: "post",
+                data: dataObj,
+                success: (response) => {
+                    this.callback(response);
+                },
+                error: (jqXHR, textStatus, errorThrown) => {
+                   console.log(textStatus, errorThrown);
+                }
+            });
+        }
+
+        private mostrarSpinner(): void {
+            console.log("mostrando");
+        }
+
+        private ocultarSpinner(): void {
+            console.log("ocultando");
+        }
 
     }
 }

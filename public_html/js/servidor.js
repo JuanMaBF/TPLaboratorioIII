@@ -8,22 +8,9 @@ var servidor;
             this.USUARIO_FILE_PATH = "./php/usuario.php";
             this.PAGOS_FILE_PATH = "./php/pagos.php";
         }
-        connection(path, data) {
-            $.ajax({
-                url: path,
-                type: "post",
-                data: data,
-                success: (response) => {
-                    this.callback(response);
-                },
-                error: (jqXHR, textStatus, errorThrown) => {
-                    console.log(textStatus, errorThrown);
-                }
-            });
-        }
         /*AUTO*/
-        traerTodosAutos() {
-            this.connection(this.AUTO_FILE_PATH, "traerAutos");
+        cargarAutos() {
+            this.connection(this.AUTO_FILE_PATH, "cargarAutos");
         }
         eliminarAutos(patente) {
             return true;
@@ -37,6 +24,28 @@ var servidor;
         eliminarUsuario(email) {
         }
         agregarUsuario(email, contra) {
+        }
+        connection(path, data) {
+            this.mostrarSpinner();
+            setTimeout(this.ocultarSpinner, 1000);
+            let dataObj = { "data": data };
+            $.ajax({
+                url: path,
+                type: "post",
+                data: dataObj,
+                success: (response) => {
+                    this.callback(response);
+                },
+                error: (jqXHR, textStatus, errorThrown) => {
+                    console.log(textStatus, errorThrown);
+                }
+            });
+        }
+        mostrarSpinner() {
+            console.log("mostrando");
+        }
+        ocultarSpinner() {
+            console.log("ocultando");
         }
     }
     servidor_1.servidor = servidor;

@@ -1,15 +1,16 @@
 <?php
 
     class grillaObject {
-        public $cols;
-        public $rows;
+        public $cols = "";
+        public $rows = "";
     }
 
-    switch($_POST) {
-        case "traerAutos":
-            $grilla = new grillaObject();
-            $grilla->$cols = ["Patente", "Usuario", "Fecha"];
-            $grilla->$rows = [
+    $action = $_POST["data"];
+    switch($action) {
+        case "cargarAutos":
+            $grilla = new grillaObject;
+            $grilla->cols = ["Patente", "Usuario", "Fecha"];
+            $grilla->rows = [
                 ["columna1a", "columna2a", "columna3a"],
                 ["columna1b", "columna2b", "columna3b"],
                 ["columna1c", "columna2c", "columna3c"],
