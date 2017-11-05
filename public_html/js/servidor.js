@@ -3,12 +3,10 @@ var servidor;
 (function (servidor_1) {
     class servidor {
         constructor() {
-            this.xmlHttp = new XMLHttpRequest();
-            this.callback = () => {
-                if (this.xmlHttp.readyState == 4 && this.xmlHttp.status == 200) {
-                    return this.xmlHttp.response;
-                }
-            };
+            this.SESSION_FILE_PATH = "./php/session.php";
+            this.AUTO_FILE_PATH = "./php/auto.php";
+            this.USUARIO_FILE_PATH = "./php/usuario.php";
+            this.PAGOS_FILE_PATH = "./php/pagos.php";
         }
         /*AUTO*/
         traerTodosAutos() {

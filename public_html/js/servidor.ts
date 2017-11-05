@@ -2,12 +2,10 @@ namespace servidor {
 
     export class servidor {
 
-        public xmlHttp = new XMLHttpRequest();
-        public callback = () => {
-            if(this.xmlHttp.readyState == 4 && this.xmlHttp.status == 200){
-                return this.xmlHttp.response;
-            }
-        }
+        private SESSION_FILE_PATH: string = "./php/session.php";
+        private AUTO_FILE_PATH: string = "./php/auto.php";
+        private USUARIO_FILE_PATH: string = "./php/usuario.php";
+        private PAGOS_FILE_PATH: string = "./php/pagos.php";
 
         /*AUTO*/
         public traerTodosAutos(): Array<Array<string>> {
