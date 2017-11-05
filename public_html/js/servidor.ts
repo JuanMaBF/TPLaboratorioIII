@@ -2,31 +2,39 @@ namespace servidor {
 
     export class servidor {
 
+        public callback: Function;
+
         private SESSION_FILE_PATH: string = "./php/session.php";
         private AUTO_FILE_PATH: string = "./php/auto.php";
         private USUARIO_FILE_PATH: string = "./php/usuario.php";
         private PAGOS_FILE_PATH: string = "./php/pagos.php";
+        
+        private 
 
-        public connection(path: string, data: any): any {
-            let respon;
+        public connection(path: string, data: any, action: string): void {
             $.ajax({
-                url: "./php/Test.php",
+                url: path,
                 type: "post",
-                data: "fsdaf" ,
+                data: data,
                 success: (response) => {
-                    respon = response;
+                    this.callback(response);
                 },
                 error: (jqXHR, textStatus, errorThrown) => {
                    console.log(textStatus, errorThrown);
                 }
             });
-            return respon;
+        }
+
+        public cargarAutos(): void{
+            this.connection(this.AUTO_FILE_PATH, "sadf");
+
         }
 
         /*AUTO*/
         public traerTodosAutos(): Array<Array<string>> {
-            let a = this.connection(this.SESSION_FILE_PATH, "");
-            console.log(a);
+            /*var aa = {};
+            let a = 
+            console.log(aa);*/
             return new Array<Array<string>>();
         }
 

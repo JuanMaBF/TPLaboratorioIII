@@ -8,25 +8,27 @@ var servidor;
             this.USUARIO_FILE_PATH = "./php/usuario.php";
             this.PAGOS_FILE_PATH = "./php/pagos.php";
         }
-        connection(path, data) {
-            let respon;
+        connection(path, data, action) {
             $.ajax({
-                url: "./php/Test.php",
+                url: path,
                 type: "post",
-                data: "fsdaf",
+                data: data,
                 success: (response) => {
-                    respon = response;
+                    this.callback(response);
                 },
                 error: (jqXHR, textStatus, errorThrown) => {
                     console.log(textStatus, errorThrown);
                 }
             });
-            return respon;
+        }
+        cargarAutos() {
+            this.connection(this.AUTO_FILE_PATH, "sadf");
         }
         /*AUTO*/
         traerTodosAutos() {
-            let a = this.connection(this.SESSION_FILE_PATH, "");
-            console.log(a);
+            /*var aa = {};
+            let a =
+            console.log(aa);*/
             return new Array();
         }
         eliminarAutos(patente) {

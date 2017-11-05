@@ -2,12 +2,19 @@
 ///<reference path="./servidor.ts"/>
 
 namespace gridCreator {
-
+    
     export class gridCreator {
+        
+        private server : servidor.servidor;
+
+        public constructor() {
+            this.server = new servidor.servidor();
+            this.server.callback = this.testMethod;
+        }
 
         /* CREAR GRILLA */
         public crearGrillaAutos() {
-            var columnas = ["Patente", "Usuario", "Fecha"];
+            /*var columnas = ["Patente", "Usuario", "Fecha"];
             var filas = [
                 ["columna1a", "columna2a", "columna3a"],
                 ["columna1b", "columna2b", "columna3b"],
@@ -18,7 +25,8 @@ namespace gridCreator {
             ];
             var server = new servidor.servidor();
             server.traerTodosAutos();
-            this.crearGrilla(columnas, filas);
+            this.crearGrilla(columnas, filas);*/
+            this.server.cargarAutos();
         }
 
         public crearGrillaUsuarios() {
