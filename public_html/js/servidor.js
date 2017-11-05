@@ -20,9 +20,9 @@ var servidor;
         agregarUsuario(email, contra) {
         }
         doConnection(action) {
-            this.mostrarSpinner();
+            $("#modalSpinner").modal();
             setTimeout(() => {
-                this.ocultarSpinner();
+                $("#modalSpinner").modal('hide');
                 this.connection(action);
             }, 1000);
         }
@@ -39,13 +39,6 @@ var servidor;
                     console.log(textStatus, errorThrown);
                 }
             });
-        }
-        mostrarSpinner() {
-            console.log("mostrando");
-            $("#modalAgregar").modal();
-        }
-        ocultarSpinner() {
-            console.log("ocultando");
         }
     }
     servidor_1.servidor = servidor;

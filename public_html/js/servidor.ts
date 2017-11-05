@@ -31,9 +31,9 @@ namespace servidor {
         }
 
         private doConnection(action: string){
-            this.mostrarSpinner();
+            $("#modalSpinner").modal();
             setTimeout(() => { 
-                this.ocultarSpinner();
+                $("#modalSpinner").modal('hide');
                 this.connection(action);
             }, 1000);
         }
@@ -52,15 +52,5 @@ namespace servidor {
                 }
             });
         }
-
-        private mostrarSpinner(): void {
-            console.log("mostrando");
-            $("#modalAgregar").modal();
-        }
-
-        private ocultarSpinner(): void {
-            console.log("ocultando");
-        }
-
     }
 }

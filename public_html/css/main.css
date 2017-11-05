@@ -25,11 +25,20 @@ header img {
 	margin: 16px 0;
 }
 
-.spinner {
+#spinner {
     position: absolute;
     width: 50vw;
     height: 50vw;
     background-color: white;
     top: 20vw;
     left: 0px;
+}
+
+#spinner-img {
+    width: 35vh;
+    height: 35vh;
+}
+
+#spinner-txt {
+    margin-left: 10px;
 }
