@@ -32,6 +32,7 @@ var gridCreator;
             //this.crearGrilla(columnas, filas);
         }
         crearGrilla(dataStr) {
+            console.log(dataStr);
             let data = JSON.parse(dataStr);
             let cols = data.cols;
             let rows = data.rows;
@@ -54,7 +55,7 @@ var gridCreator;
             newHtml += "<tbody>";
             rows.forEach(function (row) {
                 newHtml += "<tr>";
-                newHtml += "<th scope=\"row\"><input type=\"checkbox\" id=\"checkbox1\"></th>";
+                newHtml += "<th scope=\"row\"><input type=\"checkbox\" class=\"checkbox-grilla\"></th>";
                 row.forEach(function (el) {
                     newHtml += "<td>" + el + "</td>";
                 });

@@ -6,15 +6,26 @@ namespace servidor {
 
         /*AUTO*/
         public cargarAutos(): void {
-            this.doConnection("cargarAutos");
+            let data = { 
+                "action": "cargarAutos"
+            };
+            this.doConnection(data);
+            console.log($("#btn-eliminar"));
+            $("#btn-eliminar").click(this.eliminarAutos.bind(this));
         }
 
-        public eliminarAutos(patente: string): boolean {
-            return true;
+        public eliminarAutos(): void {
+            console.log("fadsf");
+            var ch = $(".checkbox-grilla:checked");
+            console.log(ch);
+            let data = { 
+                "data": "eliminarAuto",
+                "numeros": 124
+            };
+            //this.doConnection
         } 
 
-        public agregarAutos(patente: string, usuario: string): boolean {
-            return true;
+        public agregarAutos(patente: string, usuario: string): void {
         }
 
         /*USUARIO*/
@@ -30,20 +41,19 @@ namespace servidor {
 
         }
 
-        private doConnection(action: string){
+        private doConnection(data: any){
             $("#modalSpinner").modal();
             setTimeout(() => { 
                 $("#modalSpinner").modal('hide');
-                this.connection(action);
+                this.connection(data);
             }, 1000);
         }
 
-        private connection(action: string): void {
-            let actionObj = { "action": action };
+        private connection(data: any): void {
             $.ajax({
                 url: "./php/servidor.php",
                 type: "post",
-                data: actionObj,
+                data: data,
                 success: (response) => {
                     this.callback(response);
                 },

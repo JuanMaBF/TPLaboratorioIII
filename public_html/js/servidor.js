@@ -4,13 +4,24 @@ var servidor;
     class servidor {
         /*AUTO*/
         cargarAutos() {
-            this.doConnection("cargarAutos");
+            let data = {
+                "action": "cargarAutos"
+            };
+            this.doConnection(data);
+            console.log($("#btn-eliminar"));
+            $("#btn-eliminar").click(this.eliminarAutos.bind(this));
         }
-        eliminarAutos(patente) {
-            return true;
+        eliminarAutos() {
+            console.log("fadsf");
+            var ch = $(".checkbox-grilla:checked");
+            console.log(ch);
+            let data = {
+                "data": "eliminarAuto",
+                "numeros": 124
+            };
+            //this.doConnection
         }
         agregarAutos(patente, usuario) {
-            return true;
         }
         /*USUARIO*/
         traerTodosUsuarios() {
@@ -19,19 +30,18 @@ var servidor;
         }
         agregarUsuario(email, contra) {
         }
-        doConnection(action) {
+        doConnection(data) {
             $("#modalSpinner").modal();
             setTimeout(() => {
                 $("#modalSpinner").modal('hide');
-                this.connection(action);
+                this.connection(data);
             }, 1000);
         }
-        connection(action) {
-            let actionObj = { "action": action };
+        connection(data) {
             $.ajax({
                 url: "./php/servidor.php",
                 type: "post",
-                data: actionObj,
+                data: data,
                 success: (response) => {
                     this.callback(response);
                 },
