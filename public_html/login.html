@@ -32,12 +32,16 @@
                         </div>
                         <div class="input-group" id="input-group-pass">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input id="pass-txt" type="text" class="form-control" name="pass" placeholder="Contraseña">
+                            <input id="pass-txt" type="password" class="form-control" name="pass" placeholder="Contraseña">
                         </div>   
                         <div class="input-group" id="input-group-pass">
                             <span id="mensaje-login"></span> 
                         </div>
                         <input type="button" onclick="login()" class="btn btn-lg btn-primary btn-block" value="Ingresar"/>             
+                        <div class="btn-group btn-group-grillas" role="group" aria-label="...">
+                            <button onclick="testButtonNormal()" type="button" class="btn btn-default">Usr normal</button>
+                            <button onclick="testButtonAdmin()" type="button" class="btn btn-default">Usr Admin</button>
+                        </div>
                     </form>             
                 </section>  
             </div>     

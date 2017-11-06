@@ -41,6 +41,10 @@ function logout() {
     session.logout();
 }
 function testButtonNormal() {
+    $("#email-txt").val("usuarioNormal@normalidad.com");
+    $("#pass-txt").val("nedFlanders");
 }
 function testButtonAdmin() {
+    $("#email-txt").val("adminCapoATR@soyrecapo.com");
+    $("#pass-txt").val("tamoAcrivo123");
 }
