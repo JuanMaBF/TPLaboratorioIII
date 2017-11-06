@@ -28,10 +28,11 @@ header img {
 #spinner {
     position: absolute;
     width: 50vw;
-    height: 50vw;
     background-color: white;
     top: 20vw;
     left: 0px;
+    margin-left: 20%;
+    width: 35vh;
 }
 
 #spinner-img {

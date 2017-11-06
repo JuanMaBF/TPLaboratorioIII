@@ -75,8 +75,13 @@ body {
 }
 
 @media (min-width: 768px) {
-    .modal-content {
+    #modal-content-patente {
         margin-left: 2%;
         width: 95%;
+    }
+
+    #modal-content-spinner {
+        margin-left: 27%;
+        width: 44%;
     }
 }
