@@ -1,27 +1,22 @@
 "use strict";
 ///<reference path="../node_modules/@types/jquery/index.d.ts"/>
+///<reference path="./servidor.ts"/>
 var Session;
 (function (Session_1) {
     class Session {
-        login() {
-            var email = $("#email-txt").val();
-            var pass = $("#pass-txt").val();
-            if (true) {
+        constructor() {
+            this.servidor = new servidor.servidor();
+            this.servidor.callback = this.login.bind(this);
+        }
+        login(response) {
+            if (response != "noLogin") {
                 $("#input-group-mail").removeClass("has-error");
                 $("#input-group-pass").removeClass("has-error");
                 window.location.href = "index.html";
             }
             else {
-                /*if(true) { //Email tiene error
-                    $("#input-group-mail").addClass("has-error");
-                } else {
-                    $("#input-group-mail").removeClass("has-error");
-                }
-                if(true) { //Password tiene error
-                    $("#input-group-pass").addClass("has-error");
-                } else {
-                    $("#input-group-pass").removeClass("has-error");
-                }*/
+                $("#input-group-mail").addClass("has-error");
+                $("#input-group-pass").addClass("has-error");
             }
         }
         logout() {

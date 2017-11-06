@@ -4,6 +4,16 @@ namespace servidor {
 
         public callback: Function;
 
+        /*LOGIN*/
+        public login() {
+            let data = {
+                "action": "login",
+                "email": $("#email-txt").val(),
+                "pass": $("#pass-txt").val()
+            };
+            this.doConnection(data);
+        }
+
         /*AUTO*/
         public cargarAutos(): void {
             let data = { 

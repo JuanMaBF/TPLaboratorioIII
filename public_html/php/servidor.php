@@ -16,10 +16,21 @@
         ["columna1f", "columna2f", "columna3f", "9675861"]
     ];
 
-
-
     $action = $_POST["action"];
     switch($action) {
+        case "login":
+            $email = $_POST["email"];
+            $pass = $_POST["pass"];
+            $response;
+            if($email == "usuarioNormal@normalidad.com" && $pass == "nedFlanders") {
+                $response = "normal";
+            } else if ($email == "adminCapoATR@soyrecapo.com" && $pass == "tamoAcrivo123") {
+                $response = "admin";
+            } else {
+                $response = "noLogin";
+            } 
+            echo $response;
+            break;
         case "cargarAutos":
             echo json_encode($grillaAutos);
             break;

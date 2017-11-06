@@ -2,6 +2,15 @@
 var servidor;
 (function (servidor_1) {
     class servidor {
+        /*LOGIN*/
+        login() {
+            let data = {
+                "action": "login",
+                "email": $("#email-txt").val(),
+                "pass": $("#pass-txt").val()
+            };
+            this.doConnection(data);
+        }
         /*AUTO*/
         cargarAutos() {
             let data = {
