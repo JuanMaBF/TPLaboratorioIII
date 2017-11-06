@@ -17,14 +17,16 @@ var servidor;
             this.doConnection(data);
         }
         agregarAuto() {
-            $("#modalAgregar").modal('hide');
             if (this.validatePatente()) {
+                $("#modalAgregar").modal('hide');
                 let data = {
                     "action": "agregarAuto",
-                    "nuevo": $("#patente-txt").val()
+                    "nuevo": $("#ingresar-txt").val()
                 };
+                this.doConnection(data);
             }
             else {
+                $("#input-group-ingresar").addClass("has-error");
             }
         }
         /*USUARIO*/
@@ -64,7 +66,11 @@ var servidor;
             return numeros;
         }
         validatePatente() {
-            if ($("#patente-txt").val().length != 6) {
+            if ($("#ingresar-txt").val().length == 6) {
+                return true;
+            }
+            else {
+                return false;
             }
         }
     }

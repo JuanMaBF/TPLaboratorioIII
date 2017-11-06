@@ -29,8 +29,8 @@
             break; 
         case "agregarAuto":
             $patente = $_POST["nuevo"];
-            push_array($grillaAutos->rows, [$patente, "Cosme Fulanito", date('m/d/Y h:i:s a', time()), "1234567"]);
-            echo $grillaAutos;
+            array_push($grillaAutos->rows, [$patente, "Cosme Fulanito", date('m/d/Y h:i:s a', time()), "1234567"]);
+            echo json_encode($grillaAutos);
             break;
     }
 

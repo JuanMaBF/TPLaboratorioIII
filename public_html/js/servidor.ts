@@ -21,14 +21,15 @@ namespace servidor {
         } 
 
         public agregarAuto(): void {
-            $("#modalAgregar").modal('hide');
             if(this.validatePatente()){
+                $("#modalAgregar").modal('hide');
                 let data = {
                     "action": "agregarAuto",
-                    "nuevo": $("#patente-txt").val()
+                    "nuevo": $("#ingresar-txt").val()
                 }
+                this.doConnection(data);
             } else {
-
+                $("#input-group-ingresar").addClass("has-error");
             }
         }
 
@@ -78,8 +79,10 @@ namespace servidor {
         }
 
         private validatePatente(): boolean {
-            if(($("#patente-txt").val() as string).length != 6){
-
+            if(($("#ingresar-txt").val() as string).length == 6){
+                return true;
+            } else {
+                return false;
             }
         }
 
