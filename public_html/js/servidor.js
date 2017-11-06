@@ -12,12 +12,16 @@ var servidor;
             $("#btn-eliminar").click(this.eliminarAutos.bind(this));
         }
         eliminarAutos() {
-            console.log("fadsf");
-            var ch = $(".checkbox-grilla:checked");
-            console.log(ch);
+            let numeros = new Array();
+            $(".checkbox-grilla:checked").toArray().forEach(c => {
+                let th = c.parentElement;
+                let tr = th.parentElement;
+                numeros.push(tr.lastElementChild.innerHTML);
+            });
+            console.log(numeros);
             let data = {
                 "data": "eliminarAuto",
-                "numeros": 124
+                "numeros": numeros
             };
             //this.doConnection
         }

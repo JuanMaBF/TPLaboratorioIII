@@ -15,12 +15,16 @@ namespace servidor {
         }
 
         public eliminarAutos(): void {
-            console.log("fadsf");
-            var ch = $(".checkbox-grilla:checked");
-            console.log(ch);
+            let numeros = new Array<string>();
+            $(".checkbox-grilla:checked").toArray().forEach(c => {
+                let th = c.parentElement as HTMLElement;
+                let tr = th.parentElement as HTMLElement;
+                numeros.push((tr.lastElementChild as HTMLElement).innerHTML);
+            });
+            console.log(numeros);
             let data = { 
                 "data": "eliminarAuto",
-                "numeros": 124
+                "numeros": numeros
             };
             //this.doConnection
         } 
