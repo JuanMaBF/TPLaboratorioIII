@@ -14,6 +14,8 @@ namespace gridCreator {
 
         public crearGrillaAutos() {
             this.server.cargarAutos();
+            $("#btn-eliminar").click(this.server.eliminarAutos.bind(this.server));
+            $("#btn-agregar-modal").click(this.server.agregarAuto.bind(this.server));
         }
 
         public crearGrillaUsuarios() {

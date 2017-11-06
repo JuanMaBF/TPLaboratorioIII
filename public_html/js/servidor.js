@@ -8,24 +8,24 @@ var servidor;
                 "action": "cargarAutos"
             };
             this.doConnection(data);
-            console.log($("#btn-eliminar"));
-            $("#btn-eliminar").click(this.eliminarAutos.bind(this));
         }
         eliminarAutos() {
-            let numeros = new Array();
-            $(".checkbox-grilla:checked").toArray().forEach(c => {
-                let th = c.parentElement;
-                let tr = th.parentElement;
-                numeros.push(tr.lastElementChild.innerHTML);
-            });
-            console.log(numeros);
             let data = {
-                "data": "eliminarAuto",
-                "numeros": numeros
+                "action": "eliminarAutos",
+                "numeros": this.getCheckedIDs()
             };
-            //this.doConnection
+            this.doConnection(data);
         }
-        agregarAutos(patente, usuario) {
+        agregarAuto() {
+            $("#modalAgregar").modal('hide');
+            if (this.validatePatente()) {
+                let data = {
+                    "action": "agregarAuto",
+                    "nuevo": $("#patente-txt").val()
+                };
+            }
+            else {
+            }
         }
         /*USUARIO*/
         traerTodosUsuarios() {
@@ -53,6 +53,19 @@ var servidor;
                     console.log(textStatus, errorThrown);
                 }
             });
+        }
+        getCheckedIDs() {
+            let numeros = new Array();
+            $(".checkbox-grilla:checked").toArray().forEach(c => {
+                let th = c.parentElement;
+                let tr = th.parentElement;
+                numeros.push(tr.lastElementChild.innerHTML);
+            });
+            return numeros;
+        }
+        validatePatente() {
+            if ($("#patente-txt").val().length != 6) {
+            }
         }
     }
     servidor_1.servidor = servidor;

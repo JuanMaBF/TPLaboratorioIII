@@ -10,26 +10,26 @@ namespace servidor {
                 "action": "cargarAutos"
             };
             this.doConnection(data);
-            console.log($("#btn-eliminar"));
-            $("#btn-eliminar").click(this.eliminarAutos.bind(this));
         }
 
         public eliminarAutos(): void {
-            let numeros = new Array<string>();
-            $(".checkbox-grilla:checked").toArray().forEach(c => {
-                let th = c.parentElement as HTMLElement;
-                let tr = th.parentElement as HTMLElement;
-                numeros.push((tr.lastElementChild as HTMLElement).innerHTML);
-            });
-            console.log(numeros);
             let data = { 
-                "data": "eliminarAuto",
-                "numeros": numeros
+                "action": "eliminarAutos",
+                "numeros": this.getCheckedIDs()
             };
-            //this.doConnection
+            this.doConnection(data);
         } 
 
-        public agregarAutos(patente: string, usuario: string): void {
+        public agregarAuto(): void {
+            $("#modalAgregar").modal('hide');
+            if(this.validatePatente()){
+                let data = {
+                    "action": "agregarAuto",
+                    "nuevo": $("#patente-txt").val()
+                }
+            } else {
+
+            }
         }
 
         /*USUARIO*/
@@ -66,5 +66,22 @@ namespace servidor {
                 }
             });
         }
+
+        private getCheckedIDs(): Array<string> {
+            let numeros = new Array<string>();
+            $(".checkbox-grilla:checked").toArray().forEach(c => {
+                let th = c.parentElement as HTMLElement;
+                let tr = th.parentElement as HTMLElement;
+                numeros.push((tr.lastElementChild as HTMLElement).innerHTML);
+            });
+            return numeros;
+        }
+
+        private validatePatente(): boolean {
+            if(($("#patente-txt").val() as string).length != 6){
+
+            }
+        }
+
     }
 }
